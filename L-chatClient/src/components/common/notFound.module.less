@@ -1,0 +1,27 @@
+.err-page{
+  width: 100vw;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #3498db;
+  .err-text{
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .back{
+    margin-top: 30px;
+    &:hover{
+      color: #409EFF !important;
+      background-color: #ecf5ff !important;
+      border-color: #b3d8ff !important;
+    }
+  }
+}
