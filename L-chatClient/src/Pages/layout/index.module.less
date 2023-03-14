@@ -1,9 +1,36 @@
-.layout-page{
+.layout-page {
   height: 100%;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-image: url('../../static/image/theme/abstract.jpg');
-  transition: all .4s ease-out;
-  position: relative;
+  background-image: url("../../static/image/theme/abstract.jpg");
+  transition: all 0.4s ease-out;
+  position: absolute;
+}
+.chat-container {
+  display: flex;
+  width: 50%;
+  min-width: 1020px;
+  position: absolute;
+  height: 672px;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: antiquewhite;
+  filter: blur(0.6);
+  color: #333;
+  opacity: 0.8;
+  border-radius: 5px;
+  .chat-message-aside {
+    width: 7%;
+    height: 100%;
+    background-color: red;
+    border-right: 1px solid #cccccc;
+  }
+  .chat-message-content{
+    width: 93%;
+    height: 100%;
+  }
 }
