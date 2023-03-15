@@ -11,6 +11,7 @@ import {
   UserAddOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import OperaMenu from "../operaMenu";
 
 export default function Aside() {
   const useInfo = {
@@ -60,7 +61,7 @@ export default function Aside() {
         </NavLink>
       </div>
       <div className={css("aside-operation")}>
-          <SettingOutlined  className={css('opera-item')}/>
+          <OperaMenu></OperaMenu>
       </div>
     </div>
   );

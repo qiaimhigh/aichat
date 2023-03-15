@@ -3,6 +3,7 @@ import { Layout } from "antd";
 import style from "./index.module.less";
 import Component from "./components/index";
 const { Aside, HeaderTop, OperaMenu } = Component;
+import Home from "../Home";
 
 export default function LayOut() {
   return (
@@ -12,7 +13,7 @@ export default function LayOut() {
             <Aside></Aside>
           </div>
           <div className={style["chat-message-content"]}>
-
+            <Home></Home>
           </div>
       </main>
     </div>
