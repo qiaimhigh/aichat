@@ -70,7 +70,7 @@ export default function OperaMenu() {
   return (
     <div className={css("opera-box")}>
       <Dropdown placement="topRight" menu={{ items }}>
-        <SettingOutlined className={css("opera-item")} />
+        <SettingOutlined style={{color: "#949497"}} className={css("opera-item")} />
       </Dropdown>
     </div>
   );

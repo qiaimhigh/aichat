@@ -28,6 +28,7 @@ export default function Aside() {
           <Avatar
             shape="square"
             size={50}
+            src="https://tupian.qqw21.com/article/UploadPic/2020-4/2020492231947451.jpg"
             icon={<UserOutlined></UserOutlined>}
           ></Avatar>
         </NavLink>
@@ -36,27 +37,27 @@ export default function Aside() {
       <div className={css("nav-list")}>
         <NavLink  to={"/"} title="加好友">
           <span className={css('nav-item')}>
-            <UserAddOutlined />
+            <UserAddOutlined style={{color: "#949497"}}/>
           </span>
         </NavLink>
         <NavLink to={"/"} title="朋友圈">
           <span className={css('nav-item')}>
-            <DribbbleOutlined />
+            <DribbbleOutlined style={{color: "#949497"}}/>
           </span>
         </NavLink>
         <NavLink to={"/"} title="收藏">
           <span className={css('nav-item')}>
-            <CodepenCircleOutlined />
+            <CodepenCircleOutlined style={{color: "#949497"}}/>
           </span>
         </NavLink>
         <NavLink to={"/"} title="飞书">
           <span className={css('nav-item')}>
-            <DingtalkOutlined />
+            <DingtalkOutlined style={{color: "#949497"}}/>
           </span>
         </NavLink>
         <NavLink to={"/"}>
           <span className={css('nav-item')}>
-            <GithubOutlined />
+            <GithubOutlined style={{color: "#949497"}}/>
           </span>
         </NavLink>
       </div>
