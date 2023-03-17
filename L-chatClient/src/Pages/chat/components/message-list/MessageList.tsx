@@ -1,6 +1,7 @@
 import { LoadingOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
 import styles from "./list.module.less";
+import MessageItem from '../message-item/MessageItem'
 
 type Props = {};
 
@@ -23,7 +24,7 @@ const MessageList = (props: Props) => {
           ) || <span className={css("no-more")}>没有更多了</span>)}
       </div>
       <div className={css("")}>
-
+          <MessageItem></MessageItem>
       </div>
     </div>
   );
