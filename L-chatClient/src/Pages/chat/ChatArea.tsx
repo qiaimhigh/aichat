@@ -6,15 +6,19 @@ import {
   SmileOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import { Button, Drawer } from "antd";
+import { Button, Drawer, message } from "antd";
 import React, { useState } from "react";
 import styles from "./chatarea.module.less";
 import ChatHeader from "./components/header/ChatHeader";
 import MessageList from "./components/message-list/MessageList";
+import Cas from "../../components/customUploading/Index";
+import _ from "lodash";
+import EmojiContent from './components/emoji'
 type Props = {};
 
 const ChatArea = (props: Props) => {
   const [isShowDrawer, setIsShowDrawer] = useState<boolean>(false);
+  const [textMsg, setTextMsg] = useState('');
   const changeShowState = () => {
     setIsShowDrawer(!isShowDrawer);
   };
@@ -22,6 +26,26 @@ const ChatArea = (props: Props) => {
     const nameList = name.split(" ");
     return nameList.map((item) => styles[`${item}`]).join(" ");
   };
+  // 发送消息
+  const sendMsg = () => {
+    message.info("发送消息");
+  };
+  // 回车发送
+  const handleKeyDown = _.throttle(({ code }: any) => {
+    if (code === "Enter") {
+      message.info("发送信息");
+      setTextMsg("");
+    }
+  }, 1240);
+  // 发送表情
+  const chooseEmoji = (emoji:string ="")=>{
+    setTextMsg(textMsg + emoji)
+  }
+  // 发送图片
+  const choosePic = ()=>{
+
+  }
+
   return (
     <div className={css("chat-area")}>
       <ChatHeader setIsShowDrawer={changeShowState} />
@@ -43,7 +67,7 @@ const ChatArea = (props: Props) => {
             <div>
               <PictureOutlined />
               <FileOutlined style={{ margin: "0 10px" }} />
-              <SmileOutlined style={{ margin: "0 10px 0 0" }} />
+              <EmojiContent onChooseEmoji={chooseEmoji}></EmojiContent>
               <ScissorOutlined />
             </div>
             <div>
@@ -52,16 +76,29 @@ const ChatArea = (props: Props) => {
             </div>
           </div>
           <div className={css("operation")}>
-            <Button type="default" size="small">
+            <Button type="default" size="small" onClick={()=>{setTextMsg("")}}>
               清空
             </Button>
-            <Button type="primary" size="small" style={{ margin: "0 10px" }}>
+            <Button
+              onClick={sendMsg}
+              type="primary"
+              size="small"
+              style={{ margin: "0 10px" }}
+            >
               发送
             </Button>
           </div>
-          <textarea title="" name="chat" className={css("textarea")}></textarea>
-          <div className="ImgSelect"></div>
-          <div className="emojiCustom"></div>
+          <textarea
+            onKeyDown={handleKeyDown}
+            title=""
+            name="chat"
+            className={css("textarea")}
+            value={textMsg}
+            onChange={(e)=>{setTextMsg(e.target.value)}}
+          ></textarea>
+          <div className={css("ImgSelect")}>
+            <Cas setTextMsg={setTextMsg}></Cas>
+          </div>
         </div>
       </div>
     </div>

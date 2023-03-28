@@ -30,7 +30,7 @@ const MessageItem = (props: Props) => {
       }
     }
     return res;
-  };
+  }; 
   return (
     <div className={css("chat-area-message-item")}>
       <Avatar
