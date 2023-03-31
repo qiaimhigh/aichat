@@ -1,0 +1,82 @@
+.alert-emoji {
+  min-width: 500px;
+  background-color: #fff;
+  border-radius: 6px;
+}
+.emoticon-card {
+  height: 300px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  .emoticon-title {
+    margin-left: 10px;
+    color: white;
+    height: 25px;
+  }
+  .emoticon-type {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    color: rgb(106, 102, 102);
+    font-size:24px;
+    .collect {
+      margin-left: 10px;
+    }
+  }
+  .emoticon-content {
+    flex: 1;
+    overflow-y: auto;
+    .emoticon-icons {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      .emoticon-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin-left: 8px;
+        cursor: pointer;
+        img {
+          width: 28px;
+          height: 28px;
+          cursor: pointer;
+        }
+        .emoticon-item {
+          cursor: pointer;
+        }
+        &:hover {
+          background-color: rgb(239, 230, 230);
+          .emoticon-item {
+            transform: scale(1.1);
+            transition: transform 0.8s;
+          }
+        }
+      }
+    }
+    .collect-icons {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      .collect {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        margin-left: 8px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+        }
+
+        &:hover {
+          background-color: aliceblue;
+        }
+      }
+    }
+  }
+}

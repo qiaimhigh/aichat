@@ -45,6 +45,10 @@ const ChatArea = (props: Props) => {
   const choosePic = ()=>{
 
   }
+  // 聊天框数据变化
+  const onMessageChange = (msg: string)=>{
+    
+  }
 
   return (
     <div className={css("chat-area")}>
@@ -96,9 +100,6 @@ const ChatArea = (props: Props) => {
             value={textMsg}
             onChange={(e)=>{setTextMsg(e.target.value)}}
           ></textarea>
-          <div className={css("ImgSelect")}>
-            <Cas setTextMsg={setTextMsg}></Cas>
-          </div>
         </div>
       </div>
     </div>
